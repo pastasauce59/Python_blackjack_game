@@ -33,8 +33,24 @@ if begin == 'y':
 
     for card in your_hand:
         your_score += card
+    for card in comp_hand:
+        comp_score += card
 
     print(f"Your cards: {your_hand}, current score: {your_score}")
     print(f"Computer's first card: {comp_hand[0]}")
+    
+    draw_another = input("Type 'y' to get another card, type 'n' to pass: ")
+    if draw_another == 'y':
+        print('Drawing another card...')
+    else:
+        print(f"Your final hand: {your_hand}, final score: {your_score}")
+        print(f"Computer's final hand: {comp_hand}, final score: {comp_score}")
+        if your_score > comp_score:
+            print("You win!")
+        elif your_score == comp_score:
+            print("Draw game.")
+        else:
+            print("Computer wins the game.")
+
 
     
