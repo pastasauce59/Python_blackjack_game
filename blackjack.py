@@ -12,7 +12,7 @@
 
 from art import logo
 import random
-print(logo)
+# print(logo)
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
         
@@ -57,6 +57,7 @@ def end_game():
 
 keep_playing = True
 while keep_playing:
+    print(logo)
     begin = input("Do you want to play a game of Blackjac: Type 'y' or 'n': ")
     if begin == 'y':
         import os
@@ -75,6 +76,7 @@ while keep_playing:
         print(f"Your cards: {user_cards}, current score: {calculate_score(user_cards)}")
         print(f"Computer's first card: {computer_cards[0]}")
 
+        #Draws cards for computer's hand
         if calculate_score(computer_cards) != 0:
             while calculate_score(computer_cards) < 17:
                 computer_cards.append(deal_card())
